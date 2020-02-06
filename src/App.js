@@ -1,14 +1,18 @@
+import "tachyons/css/tachyons.min.css";
 import React from 'react';
-import logo from './logo.svg';
+import RestaurantsChooser from './components/RestaurantsChooser';
 import './App.css';
+import {StoreProvider} from '././store/store'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-
-      </header>
-    </div>
+    <StoreProvider>
+      <div className="mw8 center">
+        <header className="">
+        <RestaurantsChooser />
+        </header>
+      </div>
+    </StoreProvider>
   );
 }
 
