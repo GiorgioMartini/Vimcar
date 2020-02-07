@@ -1,16 +1,19 @@
 import "tachyons/css/tachyons.min.css";
 import React from 'react';
-import RestaurantsChooser from './components/RestaurantsChooser';
+import FixedMenu from './components/FixedMenu';
+import Search from './components/Search';
+import Listings from './components/Listings';
 import './App.css';
-import {StoreProvider} from '././store/store'
+import {StoreProvider, StoreContext} from './store/store'
+
 
 function App() {
   return (
     <StoreProvider>
       <div className="mw8 center">
-        <header className="">
-        <RestaurantsChooser />
-        </header>
+        <FixedMenu menuItem1={"pizza"} menuItem2={"burger"} menuItem3={"sushi"} />
+        <Search /> 
+        <Listings />
       </div>
     </StoreProvider>
   );
