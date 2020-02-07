@@ -8,12 +8,13 @@ const StoreProvider = ({ children }) => {
   const store = useLocalStore(() => ({
     selectedFood: "pizza",
     selectFood: food => (store.selectedFood = food),
-    restaurantResults: [],
+    restaurantResults: {},
     getRestaurants: food => {
-      fetchRestaurants(food).then(res => {
-          console.log(res)
-        store.restaurantResults.push(res.businesses);
-      });
+      if (!store.restaurantResults[food]) {
+        fetchRestaurants(food).then(res => {
+          store.restaurantResults[food] = res.businesses
+        });
+      }
     }
   }));
   return (

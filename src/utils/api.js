@@ -3,7 +3,7 @@ export function fetchRestaurants (term, location = "Berlin") {
   
     return fetch(endpoint, {
       headers: new Headers({
-        'Authorization': 'Bearer '+'oSJvaTmFtYVCEJcMsLFA4uRljDOILtEfp0sTWflSWclozapMP1rCZ6uttKPOoYnrdUGcTXI0ztOf3rTPVSBRa1JjngqcoTKD30YUp7yKxhZCNzS4bsZV_DqzzkAwXXYx',
+        'Authorization': 'Bearer oSJvaTmFtYVCEJcMsLFA4uRljDOILtEfp0sTWflSWclozapMP1rCZ6uttKPOoYnrdUGcTXI0ztOf3rTPVSBRa1JjngqcoTKD30YUp7yKxhZCNzS4bsZV_DqzzkAwXXYx',
       }), 
     })
       .then(res => {
