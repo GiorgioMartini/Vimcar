@@ -18,12 +18,12 @@ const Search = () => {
 
   return useObserver(() => (
     <div className="pa2">
-      <div className="flex">
-        <form onSubmit={handleSubmit}>
-          <input onChange={e => handleChange(e.target.value)} type="text" />
-          <input type="submit" value="Search" />
+        <form className="tc" onSubmit={handleSubmit}>
+          <div className="center">
+            <input placeholder="Type in Pasta, Tacos..." className="bn bg-light-gray br2 b h2 pa2 mr2" onChange={e => handleChange(e.target.value)} type="text" />
+            <input className="search-tbn pointer h2 bn bg-gray white pa2 br2 b" type="submit" value="Search" />
+          </div>
         </form>
-      </div>
     </div>
   ));
 };
