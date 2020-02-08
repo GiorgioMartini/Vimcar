@@ -4,3 +4,12 @@
 .search-tbn:hover {
   background: #4875a2;
 }
+
+.listing {
+  flex: 1 0 18%;
+  
+}
+
+.object-fit {
+  object-fit: cover;
+}
