@@ -6,7 +6,7 @@ const StoreContext = React.createContext();
 
 const StoreProvider = ({ children }) => {
   const store = useLocalStore(() => ({
-    selectedFood: "pizza",
+    selectedFood: "",
     loading: false,
     selectFood: food => (store.selectedFood = food),
     restaurantResults: {},
@@ -16,7 +16,6 @@ const StoreProvider = ({ children }) => {
         fetchRestaurants(food).then(res => {
           store.restaurantResults[food] = res.businesses
           store.loading = false
-          console.log(res.businesses)
         });
       }
     }

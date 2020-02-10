@@ -12,8 +12,12 @@ const Search = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    store.selectFood(query);
-    store.getRestaurants(query);
+    if (query) {
+      store.selectFood(query);
+      store.getRestaurants(query);
+    } else (
+      alert('You need to enter a valid search term e.g: Pasta, Tacos...')
+    )
   }
 
   return useObserver(() => (
