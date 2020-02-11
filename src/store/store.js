@@ -17,6 +17,8 @@ const StoreProvider = ({ children }) => {
           store.restaurantResults[food] = res.businesses
           store.loading = false
         });
+        // I would add a catch here and set an error to true, then based on that error being true, 
+        // we could show a message to the user.
       }
     }
   }));

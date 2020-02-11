@@ -7,6 +7,8 @@ import { StoreContext } from "./../store/store";
 import { useObserver } from "mobx-react";
 
 const Restaurants = () => {
+  // This restaurant wrapper helped me have acces to the store so i can pass the listings a s props
+  // to the Listings component so we could reuse the component, not sure if its the correct way though.
   const store = React.useContext(StoreContext);
   return useObserver(() => (
     <div className="mw8 center">
@@ -14,7 +16,7 @@ const Restaurants = () => {
       <FixedMenu menuItem1={"Pizza"} menuItem2={"Burger"} menuItem3={"Sushi"} />
       <p className="b tc pt3">or...</p>
       <Search />
-      <Listings listings={store.restaurantResults[store.selectedFood]} />
+      <Listings loading={store.loading} listings={store.restaurantResults[store.selectedFood]} />
     </div>
   ))
 }

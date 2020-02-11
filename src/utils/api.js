@@ -10,9 +10,9 @@ export function fetchRestaurants (term, location = "Berlin") {
         return res.json()
       })
       .then(data => {
-        // if (!data.items) {
-        //   throw new Error(data.message)
-        // }
+        if (!data) {
+          throw new Error(data.message)
+        }
         return data
       })
   }
